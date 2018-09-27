@@ -1,6 +1,9 @@
 ﻿namespace RequestParser
 {
     using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using Contracts;
 
     /// <summary>
     /// You have been tasked to write a console application that simulates an HTTP Server’s behavior. 
@@ -20,7 +23,48 @@
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var validActions = ReadValidActions();
+            IFakeHttpServer server = new FakeHttpServer(validActions);
+            var request = Console.ReadLine();
+            var response = server.ProcessRequest(request);
+            Console.WriteLine(response);
+        }
+
+        private static IDictionary<string, HashSet<string>> ReadValidActions()
+        {
+            var validActions = new Dictionary<string, HashSet<string>>();
+            var stopReadingActions = false;
+            do
+            {
+                var action = Console.ReadLine() ?? string.Empty;
+                if (string.IsNullOrWhiteSpace(action))
+                {
+                    continue;
+                }
+
+                if (action.Equals("END"))
+                {
+                    stopReadingActions = true;
+                }
+                else
+                {
+                    var actionParts = action.Split("/", StringSplitOptions.RemoveEmptyEntries);
+                    var path = "/" + actionParts[0];
+                    var method = actionParts[1].ToUpper();
+
+                    if (!validActions.ContainsKey(path))
+                    {
+                        validActions[path] = new HashSet<string>();
+                    }
+
+                    if (!validActions[path].Contains(method))
+                    {
+                        validActions[path].Add(method);
+                    }
+                }
+            } while (stopReadingActions != true);
+
+            return validActions;
         }
     }
 }
