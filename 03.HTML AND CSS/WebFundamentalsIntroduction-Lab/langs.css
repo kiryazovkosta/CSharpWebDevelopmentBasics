@@ -1,0 +1,12 @@
+﻿body
+{
+    background: #EEE;
+    font-size: 24pt;
+}
+
+.lang {
+    border: 1px #AAA;
+    border-radius: 5pt;
+    background: #CCC;
+    padding: 5pt;
+}
