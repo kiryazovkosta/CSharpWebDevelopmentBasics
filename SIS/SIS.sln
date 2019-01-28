@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIS.HTTP", "SIS.HTTP\SIS.HTTP.csproj", "{75B1C240-74ED-45AE-8C7C-00F515B1C2BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIS.WebServer", "SIS.WebServer\SIS.WebServer.csproj", "{9069BFBB-817C-4FA4-A980-E20E9DD7A469}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIS.WebServer", "SIS.WebServer\SIS.WebServer.csproj", "{FA77CB91-0FC2-4B01-B61F-B2302E986FF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIS.HTTP", "SIS.HTTP\SIS.HTTP.csproj", "{9C8ADFD1-16AE-4365-A160-A1C6091A0509}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIS.ConsoleClient", "SIS.ConsoleClient\SIS.ConsoleClient.csproj", "{0799AC3C-6DD8-4471-A747-BC1DDC1776BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIS.Demo", "SIS.Demo\SIS.Demo.csproj", "{DE45BDD7-7D46-4DF9-8A5A-E0E3F25918DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIS.CakesWebApp", "SIS.CakesWebApp\SIS.CakesWebApp.csproj", "{E0AB9ABE-DE28-48B6-A9BA-E8C6EF2DD2E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,23 +17,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{75B1C240-74ED-45AE-8C7C-00F515B1C2BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75B1C240-74ED-45AE-8C7C-00F515B1C2BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75B1C240-74ED-45AE-8C7C-00F515B1C2BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75B1C240-74ED-45AE-8C7C-00F515B1C2BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FA77CB91-0FC2-4B01-B61F-B2302E986FF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA77CB91-0FC2-4B01-B61F-B2302E986FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA77CB91-0FC2-4B01-B61F-B2302E986FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA77CB91-0FC2-4B01-B61F-B2302E986FF1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0799AC3C-6DD8-4471-A747-BC1DDC1776BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0799AC3C-6DD8-4471-A747-BC1DDC1776BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0799AC3C-6DD8-4471-A747-BC1DDC1776BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0799AC3C-6DD8-4471-A747-BC1DDC1776BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9069BFBB-817C-4FA4-A980-E20E9DD7A469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9069BFBB-817C-4FA4-A980-E20E9DD7A469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9069BFBB-817C-4FA4-A980-E20E9DD7A469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9069BFBB-817C-4FA4-A980-E20E9DD7A469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C8ADFD1-16AE-4365-A160-A1C6091A0509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C8ADFD1-16AE-4365-A160-A1C6091A0509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C8ADFD1-16AE-4365-A160-A1C6091A0509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C8ADFD1-16AE-4365-A160-A1C6091A0509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE45BDD7-7D46-4DF9-8A5A-E0E3F25918DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE45BDD7-7D46-4DF9-8A5A-E0E3F25918DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE45BDD7-7D46-4DF9-8A5A-E0E3F25918DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE45BDD7-7D46-4DF9-8A5A-E0E3F25918DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0AB9ABE-DE28-48B6-A9BA-E8C6EF2DD2E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0AB9ABE-DE28-48B6-A9BA-E8C6EF2DD2E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0AB9ABE-DE28-48B6-A9BA-E8C6EF2DD2E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0AB9ABE-DE28-48B6-A9BA-E8C6EF2DD2E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4CFA7362-97C9-4E97-9CF9-BFB5505EADAC}
+		SolutionGuid = {7DDABD09-DCFC-4DD2-996C-EDD241D1D1F0}
 	EndGlobalSection
 EndGlobal

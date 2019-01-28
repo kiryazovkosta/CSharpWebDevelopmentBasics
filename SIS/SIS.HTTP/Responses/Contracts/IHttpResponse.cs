@@ -6,6 +6,8 @@
 // 	<summary>Definition of a IHttpResponse interface</summary>
 namespace SIS.HTTP.Responses.Contracts
 {
+    using Cookies;
+    using Cookies.Contracts;
     using Enums;
     using Headers;
     using Headers.Contracts;
@@ -14,8 +16,10 @@ namespace SIS.HTTP.Responses.Contracts
     {
         HttpResponseStatusCode StatusCode { get; set; }
         IHttpHeaderCollection Headers { get; }
+        IHttpCookieCollection Cookies { get; }
         byte[] Content { get; set; }
         void AddHeader(HttpHeader header);
+        void AddCookie(HttpCookie cookie);
         byte[] GetBytes();
     }
 }

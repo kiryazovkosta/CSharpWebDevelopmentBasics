@@ -1,15 +1,8 @@
-﻿// 	<copyright file=HttpHeaderCollection.cs company="Business Management Systems Ltd.">
-//		Copyright (c) 2019 All Rights Reserved
-// 	</copyright>
-// 	<author>Kosta.Kiryazov</author>
-// 	<date>1/4/2019 11:30:11 AM</date>
-// 	<summary>Class representing a HttpHeaderCollection entity</summary>
+﻿using System.Collections.Generic;
+using SIS.HTTP.Common;
+
 namespace SIS.HTTP.Headers
 {
-    using System;
-    using System.Collections.Generic;
-    using Contracts;
-
     public class HttpHeaderCollection : IHttpHeaderCollection
     {
         private readonly Dictionary<string, HttpHeader> headers;
@@ -17,47 +10,29 @@ namespace SIS.HTTP.Headers
         public HttpHeaderCollection()
         {
             this.headers = new Dictionary<string, HttpHeader>();
-        }
+        }   
 
         public void Add(HttpHeader header)
         {
-            if (header == null
-                || string.IsNullOrEmpty(header.Key)
-                || string.IsNullOrEmpty(header.Value)
-                || this.ContainsHeader(header.Key)
-            )
-            {
-                throw new Exception();
-            }
-
+            CoreValidator.ThrowIfNull(header, nameof(header));
             this.headers.Add(header.Key, header);
         }
 
         public bool ContainsHeader(string key)
         {
-            if (string.IsNullOrEmpty(key))
-            {
-                throw new ArgumentException($"{nameof(key)} cannot be null");
-            }
-
+            CoreValidator.ThrowIfNull(key, nameof(key));
             return this.headers.ContainsKey(key);
         }
 
         public HttpHeader GetHeader(string key)
         {
-            if (string.IsNullOrEmpty(key))
-            {
-                throw new ArgumentException($"{nameof(key)} cannot be null");
-            }
-
-            if (this.ContainsHeader(key))
-            {
-                return this.headers[key];
-            }
-
-            return null;
+            CoreValidator.ThrowIfNull(key, nameof(key));
+            return this.headers.GetValueOrDefault(key, null);
         }
 
-        public override string ToString() => string.Join(Environment.NewLine, this.headers);
+        public override string ToString()
+        {
+            return string.Join(GlobalConstants.HttpNewLine, this.headers.Values);
+        }
     }
 }

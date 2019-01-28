@@ -18,7 +18,7 @@ namespace SIS.ConsoleClient
         {
             var serverRounRoutingTable = new ServerRoutingTable();
             serverRounRoutingTable.Routes[HttpRequestMethod.GET]["/"] = request => new HomeController().Index();
-            var server = new Server(8012, serverRounRoutingTable);
+            var server = new Server(8000, serverRounRoutingTable);
             server.Run();
         }
     }
