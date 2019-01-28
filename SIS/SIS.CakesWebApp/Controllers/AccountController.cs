@@ -115,7 +115,7 @@ namespace SIS.CakesWebApp.Controllers
 
             var userContent = this.cookieService.GetUserCookie(user.UserName);
             var response = new RedirectResult("/");
-            response.AddCookie(new HttpCookie(".auth-cakes", userContent, 7));
+            response.AddCookie(new HttpCookie(".auth-cakes", userContent, 7) { HttpOnly = true });
             return response;
         }
 

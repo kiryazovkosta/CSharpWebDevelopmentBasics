@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using SIS.HTTP.Common;
 using SIS.HTTP.Cookies;
+using SIS.HTTP.Cookies.Contracts;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Exceptions;
 using SIS.HTTP.Extensions;
 using SIS.HTTP.Headers;
+using SIS.HTTP.Headers.Contracts;
 using SIS.HTTP.Sessions;
 
 namespace SIS.HTTP.Requests

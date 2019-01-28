@@ -1,9 +1,11 @@
-﻿using System;
-using SIS.HTTP.Enums;
+﻿
 
 namespace SIS.HTTP.Extensions
 {
-    public static class HttpResponseStatusExtensions
+    using System;
+    using SIS.HTTP.Enums;
+
+    public static class HttpResponseStatusCodeExtensions
     {
         private const string NotSupportedStatusCodeExceptionMessage = "Status Code {0} not supported.";
 

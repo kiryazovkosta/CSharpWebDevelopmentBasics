@@ -5,6 +5,7 @@ namespace SIS.HTTP.Cookies
 {
     using System.Collections.Generic;
     using Common;
+    using SIS.HTTP.Cookies.Contracts;
 
     public class HttpCookieCollection : IHttpCookieCollection
     {

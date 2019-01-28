@@ -7,11 +7,13 @@
 namespace SIS.HTTP.Cookies.Contracts
 {
     using System;
-    public interface IHttpCookieCollection
+    using System.Collections.Generic;
+
+    public interface IHttpCookieCollection : IEnumerable<HttpCookie>
     {
         void Add(HttpCookie httpCookie);
         HttpCookie GetCookie(string key);
         bool ContainsCookie(string key);
-        bool HasCookie();
+        bool HasCookies();
     }
 }
